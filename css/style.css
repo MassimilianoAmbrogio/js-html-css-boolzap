@@ -1,0 +1,149 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(
+        to bottom,
+        #009a88 0%,
+        #009a88 15%,
+        #d9dbd4 15%,
+        #d9dbd4 100%
+    );
+}
+
+/* UTILITIES */
+.side-header,
+.cont-header {
+    background: #eaeaea;
+}
+
+.cont-header,
+.cont-footer {
+    padding: 38px;
+}
+
+.fa-circle-notch,
+.fa-comment-alt,
+.fa-ellipsis-v {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    width: 80%;
+    min-width: 900px;
+    height: 95%;
+    background: #fff;
+}
+
+/* SIDEBAR, SIDE HEADER */
+.sidebar {
+    flex-basis: 35%;
+    background: #ffffff;
+}
+
+.side-header {
+    padding: 10px 10px 14px;
+    border-right: 1px solid #ccc;
+}
+
+.side-header img {
+    float: left;
+    width: 50px;
+    border-radius: 30px;
+    margin-top: 2px;
+}
+
+.side-header p {
+    float: left;
+    margin-top: 18px;
+}
+
+.side-header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* ICONS */
+.side-header .fa-circle-notch {
+    color: #b1b1b1;
+    margin-left: 52%;
+    margin-top: 20px;
+}
+
+.side-header .fa-comment-alt {
+    color: #b1b1b1;
+    margin-left: 14px;
+}
+
+.side-header .fa-ellipsis-v {
+    color: #b1b1b1;
+    margin-left: 15px;
+}
+
+.side-header-not {
+    height: 76px;
+    background: #78ddfe;
+}
+
+/* CONT, CONT LINK*/
+.cont {
+    padding: 8px 10px 0 15px;
+}
+
+.cont .fa-bell-slash {
+    float: left;
+    height: 30px;
+    margin-top: 16px;
+    padding: 6px 4px;
+    border-radius: 30px;
+    color: #78ddfe;
+    background: #fff;
+    font-size: 18px;
+}
+
+.cont p {
+    float: left;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.cont-link {
+    width: 300px;
+    height: 300px;
+}
+
+.cont-link a {
+    padding: 0 0 0 10px;
+    color: #457686;
+}
+
+/* CONTENT (header, main, footer) */
+.content {
+    flex-basis: 65%;
+    background-image: url(../img/mine.jpg);
+    display: flex;
+    flex-direction: column;
+}
+
+.cont-main {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.cont-footer { 
+    background: #f4eeea;
+}

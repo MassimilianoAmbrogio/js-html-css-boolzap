@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoolzApp</title>
+    <title>Boolzapp</title>
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"
     <!-- FontAwesome -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css' />
     <!-- CSS -->
@@ -14,12 +14,44 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    <!-- Inzio esercizio BoolzApp Milestone 1 -->
+    <!-- Inzio esercizio Boolzapp Milestone 1 -->
+
+    <div id="app" class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <section class="side-header">
+                <img src="./img/avatar_io.jpg" alt="My avatar">
+                <p>{{'Nome Utente'}}</p>
+                <!-- Icons -->
+                <i class="fas fa-circle-notch"></i>
+                <i class="fas fa-comment-alt"></i>
+                <i class="fas fa-ellipsis-v"></i>
+            </section>
+            
+            <!-- Section notifications (icon, text, link)-->
+            <section class="side-header-not">
+                <div class="cont">
+                    <i class="fas fa-bell-slash"></i>
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <div class="cont-link">
+                       <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <main class="content">
+            <section class="cont-header"></section>
+            <section class="cont-main"></section>
+            <section class="cont-footer"></section>
+        </main>
+
+    </div>
 
     <!-- JS -->
     <script src="./js/main.js"></script>
 
-    <!-- Fine esercizio BoolzApp Milestone 1 -->
+    <!-- Fine esercizio Boolzapp Milestone 1 -->
     
 </body>
 </html>
