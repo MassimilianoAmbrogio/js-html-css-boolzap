@@ -20,12 +20,13 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <section class="side-header">
-                <img src="./img/avatar_io.jpg" alt="My avatar">
+                <!-- My avatar -->
+                <img src="./img/avatar_io.jpg" alt="user name">
                 <p>{{'Nome Utente'}}</p>
                 <!-- Icons 1-->
-                <i class="fas fa-circle-notch"></i>
-                <i class="fas fa-comment-alt"></i>
-                <i class="fas fa-ellipsis-v"></i>
+                <a href="#"><i class="fas fa-circle-notch"></i></a> 
+                <a href="#"><i class="fas fa-comment-alt"></i></a>
+                <a href="#"><i class="fas fa-ellipsis-v"></i></a>
             </section>
 
             <!-- Section notifications (icon, text, link)-->
@@ -43,11 +44,11 @@
             <section class="search">
                 <input type="text" 
                 placeholder="Cerca o inizia una nuova chat">
-                <i class="fas fa-search"></i>
+                <a href="#"><i class="fas fa-search"></i></a>
             </section>
             
-            <!-- Section contacts -->
-            <section class="contacts">
+            <!-- Contacts -->
+            <div class="contacts">
                <div class="contact-1">
                     <img src="./img/avatar_1.jpg" alt="Contact 1">
                     <p>{{'Michele'}}</p>
@@ -64,7 +65,7 @@
                     <img src="./img/avatar_4.jpg" alt="Contact 1">
                     <p>{{'Luisa'}}</p>
                </div>
-            </section>
+            </div>
         </aside>
 
         <main class="content">
@@ -74,13 +75,26 @@
                 <p>{{'Michele'}}</p>
                 <span>Ultimo accesso oggi alle 10.35</span>
                 <!-- Icons 2 -->
-                <i class="fas fa-search"></i>
-                <i class="fas fa-paperclip"></i>
-                <i class="fas fa-ellipsis-v"></i>
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-paperclip"></i></a>
+                <a href="#"><i class="fas fa-ellipsis-v"></i></a>
             </section>
-            <!-- Da modificare -->
-            <section class="cont-main"></section>
-            <section class="cont-footer"></section>
+            
+            <!-- Section message -->
+            <section class="cont-main">
+
+            </section>
+
+            <!-- Section sending message -->
+            <section class="cont-footer">
+               <a href="#"><i class="far fa-smile"></i></a>
+               <!-- Section write message -->
+               <div class="message">
+                    <input type="text" 
+                    placeholder="Scrivi un messaggio">
+               </div> 
+               <a href="#"><i class="fas fa-microphone"></i></a>
+            </section>
         </main>
     </div>
 
