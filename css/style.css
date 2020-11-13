@@ -31,6 +31,12 @@ body {
     padding: 12px;
 }
 
+.side-header img,
+.cont-header img {
+    cursor: pointer;
+}
+
+
 .side-header::after,
 .cont::after,
 .contacts::after,
@@ -86,7 +92,6 @@ body {
     width: 50px;
     border-radius: 30px;
     margin-top: 2px;
-    cursor: pointer;
 }
 
 .side-header p {
@@ -174,30 +179,20 @@ body {
 .contacts {
     width: 542px;
     height: 460px;
-    flex-grow: 1;
     overflow-y: auto;
 }
 
-.contact-1,
-.contact-2,
-.contact-3,
-.contact-4 {
+.contact {
     height: 75px;
     border-bottom: 1px solid #dddd;
 }
 
-.contact-1:hover,
-.contact-2:hover,
-.contact-3:hover,
-.contact-4:hover {
+.contact:hover {
     background: #e9ebeb;
     cursor: pointer;
 }
 
-.contact-1 img,
-.contact-2 img,
-.contact-3 img,
-.contact-4 img {
+.contact img {
     float: left;
     width: 60px;
     border-radius: 30px;
@@ -205,10 +200,7 @@ body {
     margin-left: 15px;
 }
 
-.contact-1 p,
-.contact-2 p, 
-.contact-3 p, 
-.contact-4 p {
+.contact p {
     float: left;
     margin-top: 30px;
     margin-left: 18px;
@@ -227,7 +219,6 @@ body {
     float: left;
     width: 50px;
     border-radius: 30px;
-    padding: 0;
 }
 
 .cont-header p {
@@ -236,7 +227,7 @@ body {
 }
 
 .cont-header span {
-    margin-top: 28px;
+    margin-top: 10px;
     margin-left: 12px;
     color: #7b8386;
 }
@@ -273,7 +264,7 @@ body {
     margin-left: 28px;
 }
 
-.message {
+.write-message {
     float: left;
     width: 82%;
     height: 45px;

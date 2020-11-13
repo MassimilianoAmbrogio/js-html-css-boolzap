@@ -21,8 +21,13 @@
         <aside class="sidebar">
             <section class="side-header">
                 <!-- My avatar -->
-                <img src="./img/avatar_io.jpg" alt="user name">
-                <p>{{'Nome Utente'}}</p>
+                <div v-for="user" class="profile">
+                    <img 
+                        :src="`./img/avatar${user.avatar}.jpg`" 
+                        :alt="user.name"
+                    >
+                    <p>{{user.name}}</p>
+                </div>
                 <!-- Icons 1-->
                 <a href="#"><i class="fas fa-circle-notch"></i></a> 
                 <a href="#"><i class="fas fa-comment-alt"></i></a>
@@ -40,30 +45,20 @@
                 </div>
             </section>
 
-             <!-- Section search -->
+            <!-- Section search -->
             <section class="search">
                 <input type="text" 
                 placeholder="Cerca o inizia una nuova chat">
                 <a href="#"><i class="fas fa-search"></i></a>
             </section>
             
-            <!-- Contacts -->
+            <!-- Contact list -->
             <div class="contacts">
-               <div class="contact-1">
-                    <img src="./img/avatar_1.jpg" alt="Contact 1">
-                    <p>{{'Michele'}}</p>
-               </div>
-               <div class="contact-2">
-                    <img src="./img/avatar_2.jpg" alt="Contact 1">
-                    <p>{{'Fabio'}}</p>
-               </div>
-               <div class="contact-3">
-                    <img src="./img/avatar_3.jpg" alt="Contact 1">
-                    <p>{{'Samuele'}}</p>
-               </div>
-               <div class="contact-4">
-                    <img src="./img/avatar_4.jpg" alt="Contact 1">
-                    <p>{{'Luisa'}}</p>
+               <div v-for="contact in contacts" class="contact">
+                    <img :src="`./img/avatar${contact.avatar}.jpg`" 
+                         :alt="contact.name"
+                    >
+                    <p>{{contact.name}}</p>
                </div>
             </div>
         </aside>
@@ -71,7 +66,10 @@
         <main class="content">
             <!-- Section header -->
             <section class="cont-header">
-                <img src="./img/avatar_1.jpg" alt="Contact 1">
+                <!-- Contact selected -->
+                <img src="./img/avatar_1.jpg" 
+                         alt="Contact 1"
+                >
                 <p>{{'Michele'}}</p>
                 <span>Ultimo accesso oggi alle 10.35</span>
                 <!-- Icons 2 -->
@@ -82,14 +80,16 @@
             
             <!-- Section message -->
             <section class="cont-main">
-
+                <div class="message">
+                    
+                </div>
             </section>
 
             <!-- Section sending message -->
             <section class="cont-footer">
                <a href="#"><i class="far fa-smile"></i></a>
                <!-- Section write message -->
-               <div class="message">
+               <div class="write-message">
                     <input type="text" 
                     placeholder="Scrivi un messaggio">
                </div> 
