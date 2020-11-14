@@ -187,11 +187,6 @@ body {
     border-bottom: 1px solid #dddd;
 }
 
-.contact:hover {
-    background: #e9ebeb;
-    cursor: pointer;
-}
-
 .contact img {
     float: left;
     width: 60px;
@@ -204,6 +199,16 @@ body {
     float: left;
     margin-top: 30px;
     margin-left: 18px;
+}
+
+.contact:hover {
+    background: #e9ebeb;
+    cursor: pointer;
+}
+
+.contact:active,
+.contact:before {
+    position: index;
 }
 
 /* CONTENT (header, main, footer) */

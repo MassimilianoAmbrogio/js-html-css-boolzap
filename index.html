@@ -54,7 +54,11 @@
             
             <!-- Contact list -->
             <div class="contacts">
-               <div v-for="contact in contacts" class="contact">
+               <div v-for="(contact, index) in contacts" 
+                    class="contact" @click="nextContact"
+                    class="contact" @click="prevContact"
+                    :class="['contact', index == indexContact ? 'active' : null]"
+                    @click="setContact(index)">
                     <img :src="`./img/avatar${contact.avatar}.jpg`" 
                          :alt="contact.name"
                     >
@@ -80,7 +84,7 @@
             
             <!-- Section message -->
             <section class="cont-main">
-                <div v-for="contact in contacts" class="message">
+                <div class="message">
                     
                 </div>
             </section>

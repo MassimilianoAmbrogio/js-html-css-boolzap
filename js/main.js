@@ -10,6 +10,7 @@ var app = new Vue({
             avatar: '_io'
         },
         // Elenco contatti
+        indexContact: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -96,5 +97,31 @@ var app = new Vue({
             },
         ]
     },
-    methods: {}
+    methods: {
+        nextContact() {
+            this.indexContact += 1;
+
+            if (this.indexContact > (this.contacts.length - 1)) {
+                this.indexContact = 0;
+            }
+        },
+        prevContact() {
+            this.indexContact -= 1;
+
+            if (this.indexContact < 0) {
+                this.indexContact = this.contacts.length - 1;
+            }
+        },
+        setContact(index) {
+            console.log(index);
+
+            this.indexContact = index;
+        },
+         startLoop() {
+            this.nextPhoto();
+         },
+        stopLoop() {
+            this.indexContact;
+        }
+    }
 });
