@@ -201,14 +201,11 @@ body {
     margin-left: 18px;
 }
 
+.contact:active,
+.contact:before,
 .contact:hover {
     background: #e9ebeb;
     cursor: pointer;
-}
-
-.contact:active,
-.contact:before {
-    position: index;
 }
 
 /* CONTENT (header, main, footer) */

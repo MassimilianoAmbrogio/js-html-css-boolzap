@@ -97,6 +97,11 @@ var app = new Vue({
             },
         ]
     },
+    created() {
+        // console.log('created!');
+        
+        this.startLoop();
+    },
     methods: {
         nextContact() {
             this.indexContact += 1;
@@ -117,7 +122,7 @@ var app = new Vue({
 
             this.indexContact = index;
         },
-         startLoop() {
+        startLoop() {
             this.nextPhoto();
          },
         stopLoop() {
