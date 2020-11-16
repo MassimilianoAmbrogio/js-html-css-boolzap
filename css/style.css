@@ -28,7 +28,7 @@ body {
 
 .cont-header,
 .cont-footer {
-    padding: 12px;
+    padding: 6px;
 }
 
 .side-header img,
@@ -36,22 +36,23 @@ body {
     cursor: pointer;
 }
 
-
 .side-header::after,
 .cont::after,
 .contacts::after,
 .cont-header::after,
+.cont-main::after,
 .cont-footer::after {
     content: '';
     display: table;
     clear: both;
 }
 
-.fa-circle-notch,
-.fa-comment-alt,
-.fa-ellipsis-v,
-.cont-header .fa-search,
-.cont-header .fa-paperclip {
+.side-header .fa-circle-notch,
+.side-header .fa-comment-alt,
+.side-header .fa-ellipsis-v,
+.actions .fa-search,
+.actions .fa-paperclip,
+.actions .fa-ellipsis-v {
     color: #b1b1b1;
     font-size: 20px;
 }
@@ -65,6 +66,25 @@ body {
 .search input:focus,
 .cont-footer input:focus {
     border: 2px solid #9acd32;
+}
+
+.side-header .fa-comment-alt,
+.side-header .fa-ellipsis-v, 
+.actions .fa-paperclip,
+.actions .fa-ellipsis-v {
+    margin-left: 15px;
+}
+
+.message.sent .message-text,
+.message.received .message-text  {
+    margin-left: 5px;
+}
+
+.message.sent .message-time,
+.message.received .message-time {
+    float: right;
+    margin-top: 4px;
+    color: #b9bcbe;
 }
 
 /* LAYOUT */
@@ -83,7 +103,7 @@ body {
 }
 
 .side-header {
-    padding: 12px 10px 10px;
+    padding: 6px 10px 10px;
     border-right: 1px solid #ccc;
 }
 
@@ -106,14 +126,6 @@ body {
     margin-top: 18px;
 }
 
-.side-header .fa-comment-alt {
-    margin-left: 14px;
-}
-
-.side-header .fa-ellipsis-v {
-    margin-left: 15px;
-}
-
 /* SIDE-HEADER-NOT, CONT, CONT-LINK*/
 .side-header-not {
     height: 76px;
@@ -126,13 +138,14 @@ body {
 
 .cont .fa-bell-slash {
     float: left;
-    height: 30px;
-    margin-top: 15px;
-    padding: 6px 4px;
+    width: 50px;
+    height: 49px;
+    margin-top: 8px;
+    padding: 15px 13px;
     border-radius: 30px;
     color: #78ddfe;
     background: #fff;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .cont p {
@@ -201,8 +214,6 @@ body {
     margin-left: 18px;
 }
 
-.contact:active,
-.contact:before,
 .contact:hover {
     background: #e9ebeb;
     cursor: pointer;
@@ -217,41 +228,69 @@ body {
 }
 
 /* HEADER */
+.cont-header .profile {
+    float: left;
+    width: 288px;
+    height: 56px;
+}
+
 .cont-header img {
     float: left;
     width: 50px;
+    margin-top: 3px;
+    margin-left: 3px;
     border-radius: 30px;
 }
 
 .cont-header p {
-    margin-top: 4px;
-    margin-left: 6.5%;
+    float: left;
+    margin-top: 5px;
+    margin-left: 12px;
 }
 
 .cont-header span {
-    margin-top: 10px;
+    float: left;
+    margin-top: 2px;
     margin-left: 12px;
     color: #7b8386;
 }
 
 /* ICONS 2*/
-.cont-header .fa-search {
-    margin-left: 60%;
+.cont-header .actions {
+    margin-top: 18px;
+    margin-right: 14px;
+    float: right;
+    width: 86px;
+    height: 22px;
 }
-
-.cont-header .fa-paperclip {
-    margin-left: 14px;
-}
-
-.cont-header .fa-ellipsis-v {
-    margin-left: 15px;
-} 
 
 /* MAIN */
 .cont-main {
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
+}
+
+.cont-main .message.sent {
+    float: right;
+    width: 350px;
+    height: 60px;
+    padding: 12px;
+    margin-right: 14%;
+    margin-top: 30px;
+    border-radius: 10px;
+    background: #ccfbb5;
+}
+
+.cont-main .message.received {
+    float: left;
+    width: 350px;
+    height: 60px;
+    padding: 12px;
+    margin-top: 28px;
+    margin-left: 122px;
+    border-radius: 10px;
+    background: #fff;
 }
 
 /* FOOTER */

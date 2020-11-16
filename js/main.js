@@ -10,7 +10,6 @@ var app = new Vue({
             avatar: '_io'
         },
         // Elenco contatti
-        indexContact: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -52,7 +51,7 @@ var app = new Vue({
                     {
                         date: '20/03/2020 16:35:00',
                         message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received'
+                        status: 'sent'
                     }
                 ],
             },
@@ -95,38 +94,14 @@ var app = new Vue({
                     }
                 ],
             },
-        ]
-    },
-    created() {
-        // console.log('created!');
-        
-        this.startLoop();
+        ],
+        activeContact: 0
     },
     methods: {
-        nextContact() {
-            this.indexContact += 1;
-
-            if (this.indexContact > (this.contacts.length - 1)) {
-                this.indexContact = 0;
-            }
-        },
-        prevContact() {
-            this.indexContact -= 1;
-
-            if (this.indexContact < 0) {
-                this.indexContact = this.contacts.length - 1;
-            }
-        },
-        setContact(index) {
+        setActiveContact(index) {
             console.log(index);
 
-            this.indexContact = index;
+            this.activeContact = index;
         },
-        startLoop() {
-            this.nextPhoto();
-         },
-        stopLoop() {
-            this.indexContact;
-        }
     }
 });

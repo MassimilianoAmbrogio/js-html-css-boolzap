@@ -55,10 +55,9 @@
             <!-- Contact list -->
             <div class="contacts">
                <div v-for="(contact, index) in contacts" 
-                    class="contact" @click="nextContact"
-                    class="contact" @click="prevContact"
-                    :class="['contact', index == indexContact ? 'active' : null]"
-                    @click="setContact(index)">
+                    :class="['contact', index === activeContact ? 'active' : '']" 
+                    @click="setActiveContact(index)" 
+               >
                     <img :src="`./img/avatar${contact.avatar}.jpg`" 
                          :alt="contact.name"
                     >
@@ -70,24 +69,38 @@
         <main class="content">
             <!-- Section header -->
             <section class="cont-header">
-                <!-- Contact selected -->
-                <img src="./img/avatar_1.jpg" 
-                         alt="Contact 1"
-                >
-                <p>{{'Michele'}}</p>
-                <span>Ultimo accesso oggi alle 10.35</span>
+                <!-- Chat window -->
+                <div class="profile">
+                    <img class="avatar"
+                        :src="`./img/avatar${contacts[activeContact].avatar}.jpg`" 
+                        :alt="contacts[activeContact].name"
+                    >
+                    <p>{{contacts[activeContact].name}}</p>
+                    <span>Ultimo accesso oggi alle 10.35</span>
+                </div>
                 <!-- Icons 2 -->
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="fas fa-paperclip"></i></a>
-                <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+                <div class="actions">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-paperclip"></i></a>
+                    <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+                </div>
             </section>
             
             <!-- Section message -->
             <section class="cont-main">
-                <div class="message">
-                    
+                <div v-for="message in contacts[activeContact].messages" 
+                    :class="['message', message.status]"
+                >
+                
+                    <span class="message-text">
+                        {{message.message}}
+                    </span>
+                        
+                    <span class="message-time">
+                        {{message.date}}
+                    </span>
                 </div>
-            </section>
+            </section> 
 
             <!-- Section sending message -->
             <section class="cont-footer">
