@@ -21,8 +21,8 @@
         <aside class="sidebar">
             <section class="side-header">
                 <!-- My avatar -->
-                <div v-for="user" class="profile">
-                    <img 
+                <div class="profile">
+                    <img class="avatar"
                         :src="`./img/avatar${user.avatar}.jpg`" 
                         :alt="user.name"
                     >
@@ -99,6 +99,12 @@
                     <span class="message-time">
                         {{message.date}}
                     </span>
+                    <!-- My message -->
+                    <div class="myMessage-container">
+                        <span class="message" v-for="message in myMessage">
+                            {{message}}
+                        </span>
+                    </div>
                 </div>
             </section> 
 
@@ -107,8 +113,12 @@
                <a href="#"><i class="far fa-smile"></i></a>
                <!-- Section write message -->
                <div class="write-message">
-                    <input type="text" 
-                    placeholder="Scrivi un messaggio">
+                    <input 
+                       type="text" 
+                       placeholder="Scrivi un messaggio"
+                       v-model="newMessage"
+                       @keyup.enter="addMessage"
+                    >
                </div> 
                <a href="#"><i class="fas fa-microphone"></i></a>
             </section>
@@ -116,6 +126,8 @@
     </div>
 
     <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/locale/it.min.js"></script>
     <script src="./js/main.js"></script>
 
     <!-- Fine esercizio Boolzapp Milestone 1 -->

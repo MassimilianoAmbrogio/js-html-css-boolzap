@@ -95,13 +95,32 @@ var app = new Vue({
                 ],
             },
         ],
-        activeContact: 0
+        activeContact: 0,
     },
+    myMessage: [
+                {
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                message: '',
+                status: 'sent'
+                },1000,
+                {
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                message: 'Ok',
+                status: 'received'
+                }
+        ],
+    myMessage: '',
     methods: {
         setActiveContact(index) {
             console.log(index);
 
             this.activeContact = index;
-        },
+        }
+    },
+    addMessage() {
+            if (this.newMessage.trim() !== '') {
+                this.myMessage.push(this.newMessage);
+                this.newMessage = '';
+              }
     }
 });
