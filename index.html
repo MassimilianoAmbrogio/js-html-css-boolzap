@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css' />
     <!-- CSS -->
@@ -91,7 +91,6 @@
                 <div v-for="message in contacts[activeContact].messages" 
                     :class="['message', message.status]"
                 >
-                
                     <span class="message-text">
                         {{message.message}}
                     </span>
@@ -99,25 +98,19 @@
                     <span class="message-time">
                         {{message.date}}
                     </span>
-                    <!-- My message -->
-                    <div class="myMessage-container">
-                        <span class="message" v-for="message in myMessage">
-                            {{message}}
-                        </span>
-                    </div>
                 </div>
             </section> 
 
             <!-- Section sending message -->
             <section class="cont-footer">
                <a href="#"><i class="far fa-smile"></i></a>
-               <!-- Section write message -->
+               <!-- My message -->
                <div class="write-message">
                     <input 
-                       type="text" 
+                       type="text"
                        placeholder="Scrivi un messaggio"
-                       v-model="newMessage"
-                       @keyup.enter="addMessage"
+                       v-model="newMessageText"
+                       @keyup.enter="insertMessage"
                     >
                </div> 
                <a href="#"><i class="fas fa-microphone"></i></a>
@@ -127,10 +120,8 @@
 
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/locale/it.min.js"></script>
     <script src="./js/main.js"></script>
 
     <!-- Fine esercizio Boolzapp Milestone 1 -->
-    
 </body>
 </html>

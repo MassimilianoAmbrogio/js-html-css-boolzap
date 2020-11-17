@@ -96,31 +96,38 @@ var app = new Vue({
             },
         ],
         activeContact: 0,
+        newMessageText: ''
     },
-    myMessage: [
-                {
-                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                message: '',
-                status: 'sent'
-                },1000,
-                {
-                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                message: 'Ok',
-                status: 'received'
-                }
-        ],
-    myMessage: '',
     methods: {
         setActiveContact(index) {
             console.log(index);
 
             this.activeContact = index;
-        }
-    },
-    addMessage() {
-            if (this.newMessage.trim() !== '') {
-                this.myMessage.push(this.newMessage);
-                this.newMessage = '';
-              }
+        },
+        insertMessage() {
+            if (this.newMessageText.trim() !== '') {
+
+                // const activeMessages = this.contacts[this.activeContact].messages;
+
+                // Inserimento messaggio
+                this.contacts[this.activeContact].messages.push({
+                    message: this.newMessageText.trim(),
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    status: 'sent'
+                });
+
+                // Pulizia
+                this.newMessageText = '';
+
+                // Auto reply
+                setTimeout(() => {
+                    this.contacts[this.activeContact].messages.push({
+                        message: 'ok',
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        status: 'received'
+                    });
+                }, 1000);
+            } 
+        } 
     }
 });
