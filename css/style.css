@@ -312,17 +312,12 @@ body {
 }
 
 .message.received .message-time {
-    margin-left: 63%;
+    margin-left: 64%;
 }
 
 /* FOOTER */
 .cont-footer { 
     background: #f4eeea;
-}
-
-.cont-footer .fa-smile {
-    margin-left: 28px;
-    margin-top: 10px;
 }
 
 .write-message {
@@ -343,13 +338,14 @@ body {
     border-radius: 6px;
 }
 
+.cont-footer .fa-smile {
+    margin-left: 28px;
+}
+
 .cont-footer .fa-smile, 
 .cont-footer .fa-microphone {
     width: 50px;
+    margin-top: 10px;
     color: #777f82;
     font-size: 25px;
-}
-
-.cont-footer .fa-microphone {
-    margin-top: 12px;
 }
